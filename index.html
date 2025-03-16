@@ -1,0 +1,137 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="../Semantic/semantic.min.css">
+    <link rel="stylesheet" href="../Semantic/jquery/jquery.datetimepicker.min.css">
+    <link rel="stylesheet" href="../Semantic/jquery-ui.css">
+    <link rel="stylesheet" href="../Semantic/jquery.modal.css" />
+    <link rel="stylesheet" href="../Semantic/components/menu.css" />
+
+    <script src="../semantic/components/menu.js"></script>
+    <script src="../semantic/jquery.js" type="text/javascript"></script>
+    <script src="../semantic/jquery/jquery.js" type="text/javascript"></script>
+    <script src="../semantic/semantic.min.js"></script>
+    <script type="text/javascript" src="../semantic/jquery-ui.js"></script>
+    <script src="../semantic/jquery.modal.js"></script>
+    <script src="index.js"></script>
+</head>
+<body>
+<div class="ui fluid container" style="margin: 2; padding:2;">
+
+    <div  class="ui menu ">
+      <a style="background-color: #fff; border: solid silver 1px; " class="active item" href="#" >
+        <img style="width:85px; height:32px;" src=".#" alt="#" >
+      </a>
+
+      <a onclick="totals()" class="item">
+        <i class="folder open icon"></i> Mostrar Todos
+      </a>
+
+      <div style="background-color: #fff; text-align: center; "  class="ui dropdown button item">
+        <span class="text"> <i class="caret square right icon"></i> Departamentos</span>
+        <i class="dropdown icon"></i>
+        <div class="menu">
+          <div onclick="vendas()" class="item">
+            <span class="text"><i class="share icon"></i>  Administrativo Vendas</span>
+          </div>
+          <div onclick="almoxarifado()" class="item">
+            <span class="text"><i class="share icon"></i>  Almoxarifado</span>
+          </div>
+          <div onclick="diretoria()" class="item">
+            <span class="text"><i class="share icon"></i>  Diretoria</span>
+          </div>
+          <div onclick="engenharia()" class="item">
+            <span class="text"><i class="share icon"></i>  Engenharia</span>
+          </div>
+          <div onclick="expedicao()" class="item">
+            <span class="text"><i class="share icon"></i>  Expedição</span>
+          </div>
+          <div onclick="laboratorio()" class="item">
+            <span class="text"><i class="share icon"></i>  Laboratório</span>
+          </div>
+          <div onclick="logistica()" class="item">
+            <span class="text"><i class="share icon"></i>  Logistica</span>
+          </div>
+          <div onclick="marketing()" class="item">
+            <span class="text"><i class="share icon"></i> Marketing</span>
+          </div> 
+          <div onclick="qualidade()" class="item">
+            <span class="text"><i class="share icon"></i> Qualidade</span>
+          </div>
+          <div onclick="recursoshumanos()" class="item">
+            <span class="text"><i class="share icon"></i>  Recursos Humanos</span>
+          </div>
+          <div onclick="ti()" class="item">
+            <span class="text"><i class="share icon"></i>  TI</span>
+          </div>
+          <div onclick="televendas()" class="item">
+            <span class="text"><i class="share icon"></i> Tele Vendas</span>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="right menu">
+        <div class="item">
+          <div class="ui transparent icon input">
+            <input id="search-input" onkeydown="filter(event)" type="text" placeholder="Buscar pelo nome....">
+            <i class="search link icon"></i>
+          </div>
+        </div>
+      </div>
+      
+      <a  style="background-color: #fff; border: solid silver 1px;"  class="active item  " href="#" >
+        <img style="width:85px; height:32px;" src="#" alt="" height="30" width="150%">
+      </a>
+    </div>
+
+  <div style="display: none;"  id ="messageAlert" class="ui icon warning message">
+    <i class="info circle icon"></i>
+    <div class="content">
+      <div class="header">
+        Algum dado não confere?
+      </div>
+      <p>Abra um chamado com a TI pelo <a  style="background-color: #fff; border: solid silver 1px;"  class="ui button"  href="#" target="_blank"><i class="share icon"></i>  Movidesk</a></p>
+    </div>
+  </div>
+  
+    <div class="ui main fluid container">
+        <table id="users" class="ui celled  table ">
+            <thead>
+                <tr>
+                    <!-- <th class="collapsing center">ID</th> -->
+                    <th class="collapsing">NOME</th>
+                    <th class="collapsing">DEPARTAMENTO</th>
+                    <th class="collapsing">CARGO</th>
+                    <th class="collapsing">RAMAL</th>
+                </tr>
+            <tbody class="users"></tbody>
+            </thead>
+        </table>
+
+        
+        <div id ="message" class="ui icon warning message">
+          <i class="inbox icon"></i>
+          <div class="content">
+            <div class="header">
+              Selecione um Setor no Menu superior ou Filtre pelo campo de pesquisa!
+            </div>
+            <p>Colaboradores ativos e seus ramais para contatos.</p>
+          </div>
+        </div>
+
+    </div>
+
+    <div  style="display: none;" id ="alertMessage" class="negative message">
+      <div class="header">
+        Atenção!
+      </div>
+      <p>Limpar filtros antes de selecionar departamento!</p>
+    </div>
+
+
+    
+</body>
+
+</html>
